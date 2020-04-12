@@ -12,7 +12,7 @@ Goal : irregular hole pattern에도 이미지 복원을 견고하게 잘 해내�
 
 최근 image inpainting 접근법 및 문제점   
 __1) Non-learning Based model__ : use image statistics  
-__problems__    
+problems     
 - 구멍을 채우기 위해서 통계적인 방법을 사용  
 - 시각적으로 의미를 지니지 않는 결과  
 - 작은 구멍에 대해서만 성능이 잘 나타남(==variance is low)  
@@ -20,12 +20,12 @@ __problems__
 
 __2) Deep learning Based model__ : use deeplearning  
 이미지에 convolutional filters를 적용하고 구멍은 고정된 초기값을 채워넣는다.  
-__problems__    
+problems      
 - 구멍을 어떻게 초기화하느냐에 따라 결과가 다르게 나타남.  
 - post-processing을 필요로 하는 방식.  
 
 __3) focus on rectangular shaped holes__    
-__problems__    
+problems      
 limit the utility of these models in application  
   
 __-> 이 논문에서는 구멍 초기화에 상관없이 이미지 복원을 잘하고, irregular hole에 잘 대응할 수 있도록 큰 이미지 벤치마크를 사용했으며    
@@ -34,13 +34,21 @@ __-> 이 논문에서는 구멍 초기화에 상관없이 이미지 복원을 �
 Approach  
 ------  
 1. Partial Convolutional Layer  
+The partial convolution at every location is expressed as:  
+<img src="./img/partialconv.jpg" width="40%" height="20%"></img>
 
 W : convolution filter weights  
 b : bias  
 X : feature values for the current convolution window(input으로 들어오는 feature)  
 M : binary mask(input으로 들어오는 Mask)     
 
+After each partial convolution operation, we then update our mask as follows:  
+<img src="./img/mask.jpg" width="40%" height="20%"></img>
+0 -> include hole  
+1 -> not include hole  
+
 2. Network Architecture and Implementation  
+
 3. Loss Functions  
 
 Experiments  
