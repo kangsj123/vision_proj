@@ -34,6 +34,12 @@ __-> 이 논문에서는 구멍 초기화에 상관없이 이미지 복원을 �
 Approach  
 ------  
 1. Partial Convolutional Layer  
+
+W : convolution filter weights  
+b : bias  
+X : feature values for the current convolution window(input으로 들어오는 feature)  
+M : binary mask(input으로 들어오는 Mask)     
+
 2. Network Architecture and Implementation  
 3. Loss Functions  
 
