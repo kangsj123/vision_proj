@@ -57,14 +57,14 @@ __3. Loss Functions__
 아래의 전체 Loss는 각종 Loss들이 조합이다.  
 <img src="./img/pconv_total_loss.jpg" width="60%" height="60%"></img>  
 1) hole loss : hole인 부분에 대한 loss   
-<img src="./img/pconv_hole_loss.jpg" width="60%" height="60%"></img>  
+<img src="./img/pconv_hole_loss.jpg" width="30%" height="30%"></img>  
 2) valid loss : non hole인 부분에 대한 loss  
-<img src="./img/pconv_valid_loss.jpg" width="60%" height="60%"></img>  
+<img src="./img/pconv_valid_loss.png" width="60%" height="60%"></img>  
 3) perceptual loss : I out과 I comp 픽셀간의 차이를 줄이기 위함.  
 I out : 모델을 타고 나오는 결과 이미지  
 I comp : I out에서 non-hole부분을 원래 input pixel값으로 바꾼 것  
 <img src="./img/pconv_perceptual_loss.jpg" width="60%" height="60%"></img>  
-4),5) L style loss
+4),5) L style loss  
 <img src="./img/pconv_style_out_loss.jpg" width="60%" height="60%"></img>  
 <img src="./img/pconv_style_comp_loss.jpg" width="60%" height="60%"></img>  
 6) total variation loss : hole의 경계에 대한 loss  
