@@ -10,7 +10,7 @@ Introduction & Related work
 Goal : irregular hole pattern에도 이미지 복원을 견고하게 잘 해내는 모델을 제안하고,  
 따로 후처리가 필요없이 이미지가 자연스럽게 보여지도록 예측을 잘 해내는 것이다.  
 
-최근 image inpainting 접근법 및 문제점   
+## 최근 image inpainting 접근법 및 문제점   
 __1) Non-learning Based model__ : use image statistics  
 problems     
 - 구멍을 채우기 위해서 통계적인 방법을 사용  
@@ -33,23 +33,29 @@ __-> 이 논문에서는 구멍 초기화에 상관없이 이미지 복원을 �
 
 Approach  
 ------  
-1. Partial Convolutional Layer  
-The partial convolution at every location is expressed as:  
-<img src="./img/partialconv.jpg" width="40%" height="20%"></img>
+__1. Partial Convolutional Layer__    
+partial convolution은 다음과 같이 연산한다:  
+<img src="./img/partialconv.jpg" width="60%" height="30%"></img>
 
 W : convolution filter weights  
 b : bias  
 X : feature values for the current convolution window(input으로 들어오는 feature)  
 M : binary mask(input으로 들어오는 Mask)     
 
-After each partial convolution operation, we then update our mask as follows:  
-<img src="./img/mask.jpg" width="40%" height="20%"></img>
-0 -> include hole  
-1 -> not include hole  
+각 partial convolution 연산 이후에는, 마스크를 다음과 같이 업데이트 한다:  
+<img src="./img/mask.jpg" width="30%" height="15%"></img>  
+0 -> 구멍 포함  
+1 -> 구멍 포함 안함  
 
-2. Network Architecture and Implementation  
+__2. Network Architecture and Implementation__   
+<img src="./img/pconv_network.jpg" width="60%" height="60%"></img>
+image/mask 사이즈 : CxHxW  
+UNet-like architecture 사용 : partial convolutional 레이어들 + nearest neighbor up-sampling  
+마지막 partial convolutional 레이어의 인풋 : 구멍을 포함한 원본 이미지 + 원본 마스크 -> 아웃풋 이미지에 인풋 이미지 정보를 전달하기 위함.  
 
-3. Loss Functions  
+__3. Loss Functions__    
+
+
 
 Experiments  
 -----  
