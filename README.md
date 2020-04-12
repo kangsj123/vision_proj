@@ -10,6 +10,9 @@
 - 프로젝트 주요 내용
 
 - 추진 계획
+image inpainting 최신 논문 survey
+1) Image Inpainting for Irregular Holes Using Partial Convolutions
+[논문](https://arxiv.org/abs/1804.07723) [코드](https://github.com/MathiasGruber/PConv-Keras/blob/master/libs/pconv_model.py) [리뷰]()
 
 - 결론
 
