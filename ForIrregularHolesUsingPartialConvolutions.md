@@ -64,8 +64,9 @@ __3. Loss Functions__
 I out : 모델을 타고 나오는 결과 이미지  
 I comp : I out에서 non-hole부분을 원래 input pixel값으로 바꾼 것  
 <img src="./img/pconv_perceptual_loss.jpg" width="60%" height="60%"></img>  
-4),5) L style loss  
+4) L style out loss  
 <img src="./img/pconv_style_out_loss.jpg" width="60%" height="60%"></img>  
+5) L style composited output loss  
 <img src="./img/pconv_style_comp_loss.jpg" width="60%" height="60%"></img>  
 6) total variation loss : hole의 경계에 대한 loss  
 <img src="./img/pconv_total_variation_loss.jpg" width="60%" height="60%"></img>  
