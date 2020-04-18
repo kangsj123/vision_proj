@@ -74,14 +74,10 @@ I comp : I out에서 non-hole부분을 원래 input pixel값으로 바꾼 것
 
 Experiments  
 -----  
-1. 
+1. 이전 다른 논문에서는 임의로 직사각형 구멍(hole)을 제거한 데이터셋을 생성하였는데, 이 논문에서는 이를 개선하여 다양한 모양과 크기를 지닌 마스크를 생성했다. 
+-> 55,116 masks for training set/ 24,866 masks for test set 에서 random dilation, rotation, cropping을 통해 데이터 늘렸다. 
+-> image border와 가까운 hole은 성능을 낮추기 때문에 test set을 image border에서 hole이 인접한 mask와 인접하지 않은 mask로 나누었다. 그리고 hole size에 따라서 mask를 6가지로 분류하였다. (6x2=12가지)
 
-
-
-
-
-
-
-
+2. dataset: 3 image datasets(ImageNet, Place2, CelebA-HQ)
 
 
