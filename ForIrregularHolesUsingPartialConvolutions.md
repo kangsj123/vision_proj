@@ -74,10 +74,28 @@ I comp : I out에서 non-hole부분을 원래 input pixel값으로 바꾼 것
 
 Experiments  
 -----  
-1. 이전 다른 논문에서는 임의로 직사각형 구멍(hole)을 제거한 데이터셋을 생성하였는데, 이 논문에서는 이를 개선하여 다양한 모양과 크기를 지닌 마스크를 생성했다. 
--> 55,116 masks for training set/ 24,866 masks for test set 에서 random dilation, rotation, cropping을 통해 데이터 늘렸다. 
+1. 이전 다른 논문에서는 임의로 직사각형 구멍(hole)을 제거한 데이터셋을 생성하였는데, 이 논문에서는 이를 개선하여 다양한 모양과 크기를 지닌 마스크를 생성했다.  
+-> mask, image 모두 512x512  
+-> 55,116 masks for training set/ 24,866 masks for test set 에서 random dilation, rotation, cropping을 통해 데이터 늘렸다.  
 -> image border와 가까운 hole은 성능을 낮추기 때문에 test set을 image border에서 hole이 인접한 mask와 인접하지 않은 mask로 나누었다. 그리고 hole size에 따라서 mask를 6가지로 분류하였다. (6x2=12가지)
 
-2. dataset: 3 image datasets(ImageNet, Place2, CelebA-HQ)
+2. dataset: 3 image datasets(ImageNet, Places2, CelebA-HQ)  
+
+3. Comparisons : PM, GL, GntIpt, Conv, Pconv(이 논문 방식)  
+
+4. User Study  
+unlimited time: 비교를 위해, 서로 다른 method를 사용한 이미지 두 개를 사람들에게 보여주고, 어떤 이미지가 더 현실적으로 보이는지 고르도록 시간을 무한정 준다.  
+limited time: 각 method와 ground truth의 두 가지 이미지를 보여주고, 제한된 시간 안에 사람들에게 어떤 이미지가 더 현실적으로 보이는지 고르도록 한다.  
+
+<img src="./img/user_study.jpg" width="60%" height="60%"></img>   
+
+
+Discussion & Extension  
+---
+1. 장점 : hole control 가능(shape, location, distance from the image borders), hole size가 증가함에 따라 성능이 크게 저하되지 않는다.  
+2. 여전히 failure cases 존재(문에 창살이 있는 경우, hole이 매우 큰 경우)  
+3. 
+
+
 
 
