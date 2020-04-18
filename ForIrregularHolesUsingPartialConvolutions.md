@@ -87,7 +87,7 @@ Experiments
 unlimited time: 비교를 위해, 서로 다른 method를 사용한 이미지 두 개를 사람들에게 보여주고, 어떤 이미지가 더 현실적으로 보이는지 고르도록 시간을 무한정 준다.  
 limited time: 각 method와 ground truth의 두 가지 이미지를 보여주고, 제한된 시간 안에 사람들에게 어떤 이미지가 더 현실적으로 보이는지 고르도록 한다.  
 
-<img src="./img/user_study.jpg" width="60%" height="60%"></img>   
+<img src="./img/user_study.jpg" width="80%" height="80%"></img>   
 
 
 Discussion & Extension  
