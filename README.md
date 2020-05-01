@@ -26,6 +26,8 @@
 * [리뷰](https://github.com/kangsj123/vision_proj/blob/master/FreeFormImageInpaintingWithGatedConvolution.md)  
 
 ## 2. kaggle 공부  
+1) [tensorflow 공부](https://github.com/kangsj123/vision_proj/blob/master/tensorflow-practice)  
+2) 코드  
 
 
 - 결론
