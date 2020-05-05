@@ -6,3 +6,4 @@
 
 ### 연습 코드 작성  
 [practice1](https://github.com/kangsj123/vision_proj/blob/master/tensorflow-practice/practice1.ipynb)  
+[practice2](https://github.com/kangsj123/vision_proj/blob/master/tensorflow-practice/practice2.ipynb)   
