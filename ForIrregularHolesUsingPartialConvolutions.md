@@ -92,9 +92,11 @@ limited time: 각 method와 ground truth의 두 가지 이미지를 보여주고
 
 Discussion & Extension  
 ---
-1. 장점 : hole control 가능(shape, location, distance from the image borders), hole size가 증가함에 따라 성능이 크게 저하되지 않는다.  
+1. 장점 : hole control 가능(shape, location, distance from the image borders 상관없이), hole size가 증가함에 따라 성능이 크게 저하되지 않는다.  
 2. 여전히 failure cases 존재(문에 창살이 있는 경우, hole이 매우 큰 경우)  
-3. 
+3. extension tasks : image super resolution  
+
+
 
 
 
