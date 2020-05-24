@@ -27,7 +27,7 @@ image inpainting(이미지 복원) 기본 개념
 * [논문](https://arxiv.org/pdf/1806.03589.pdf)  
 * [코드]()  
 
-## 2. kaggle 공부  
+## 2. Tensorflow 공부  
 1) [tensorflow 공부](https://github.com/kangsj123/vision_proj/blob/master/tensorflow-practice)  
 2) 코드  
 
