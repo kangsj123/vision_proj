@@ -17,7 +17,6 @@ image inpainting(이미지 복원) 기본 개념
 ## 1. image inpainting 최신 논문 survey  
 1) Generative Image Inpainting with Contextual Attention 21 Mar 2018  
 * [논문](https://arxiv.org/pdf/1801.07892.pdf)  
-* [리뷰](https://github.com/kangsj123/vision_proj/blob/master/GenerativeImageInpaintingWithContextualAttention.md)
 
 2) Image Inpainting for Irregular Holes Using Partial Convolutions 15 Dec 2018  
 * [논문](https://arxiv.org/abs/1804.07723)  
@@ -27,7 +26,6 @@ image inpainting(이미지 복원) 기본 개념
 3) Free-Form Image Inpainting with Gated Convolution 22 Oct 2019  
 * [논문](https://arxiv.org/pdf/1806.03589.pdf)  
 * [코드]()  
-* [리뷰](https://github.com/kangsj123/vision_proj/blob/master/FreeFormImageInpaintingWithGatedConvolution.md)  
 
 ## 2. kaggle 공부  
 1) [tensorflow 공부](https://github.com/kangsj123/vision_proj/blob/master/tensorflow-practice)  
