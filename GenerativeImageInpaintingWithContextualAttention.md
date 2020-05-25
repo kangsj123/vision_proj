@@ -51,8 +51,12 @@ Related Work
 기존 work는 크게 두 가지로 나누어 볼 수 있다.  
 #### 1) traditional diffusion or patch-based approach  
 - 배경의 이미지를 hole로 가져오는 방식으로, variational algorithm이나 patch similarity 사용  
+- stationary texture에서만 잘 작동 -> non stationary에서 잘 작동하지 않는 문제 해결하기 위한 다양한 방법 제시됨   
 
 #### 2) learning based approach
+- deep learning and GAN based  
+- 먼저, context encoders가 large hole을 복원하기 위한 dnn을 학습시킨다.  
+
 
 ### 2. Attention modeling  
 
