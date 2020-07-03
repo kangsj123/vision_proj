@@ -55,10 +55,12 @@ Related Work
 
 #### 2) learning based approach
 - deep learning and GAN based  
-- 먼저, context encoders가 large hole을 복원하기 위한 dnn을 학습시킨다.  
+- context encoders가 large hole을 복원하기 위한 dnn을 학습시킨다.  
+  - reconstruction loss & generative adversarial loss를 objective function으로 한다.  
+ 
 
-
-### 2. Attention modeling  
+### 2. Attention modeling   
+- 
 
 
 ### 3. Improved Generative Inpainting Network  
