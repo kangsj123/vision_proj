@@ -49,18 +49,22 @@ Related Work
 -------
 ### 1. Image inpainting  
 기존 work는 크게 두 가지로 나누어 볼 수 있다.  
+
 #### 1) traditional diffusion or patch-based approach  
 - 배경의 이미지를 hole로 가져오는 방식으로, variational algorithm이나 patch similarity 사용  
 - stationary texture에서만 잘 작동 -> non stationary에서 잘 작동하지 않는 문제 해결하기 위한 다양한 방법 제시됨   
 
 #### 2) learning based approach
 - deep learning and GAN based  
-- context encoders가 large hole을 복원하기 위한 dnn을 학습시킨다.  
-  - reconstruction loss & generative adversarial loss를 objective function으로 한다.  
- 
+- small regions 복원 -> large holes 복원으로 발전  
+  - context encoders가 large hole을 복원하기 위한 dnn을 학습시키며  
+    reconstruction loss & generative adversarial loss를 objective function으로 한다.  
+- 더 나아가서, global & local discriminator를 이용하여 이미지 전체와 부분에 있어서 coherent한지 평가한다.  
+- channel-wise fully connected layer 대신 dilated convolution을 사용한다.  
 
 ### 2. Attention modeling   
-- 
+- deep convolutional neural networks에서 spatial attention을 배우는 studies가 많다.  
+- STN : for object classification tasks  
 
 
 ### 3. Improved Generative Inpainting Network  
