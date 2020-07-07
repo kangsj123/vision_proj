@@ -64,8 +64,26 @@ Related Work
 
 ### 2. Attention modeling   
 - deep convolutional neural networks에서 spatial attention을 배우는 studies가 많다.  
-- STN : for object classification tasks  
-
+- STN : for object classification tasks, 파라미터를 예측할 수 있는 localization module을 가지고 있다.  
+- appearance flow : predict offset vectors  
 
 ### 3. Improved Generative Inpainting Network  
+*논문에서 제시한 네트워크*  
+- 기존 state-of-the-art inpainting model을 개선하여 이 논문에서 새로운 네트워크를 구성하였다.  
+- input : 직사각형 hole을 흰 색으로 채운 이미지 256x256, hole을 나타내는 binary mask  
+  학습된 모델은 다양한 사이즈의 이미지와 여러 구멍이 있는 이미지를 input으로 받아들일 수 있다.  
+- output : final completed image (복원한 이미지)  
+- two-stage coarse-to-fine network architecture  
+  : receptive field의 사이즈가 충분히 큰 것이 중요하다.    
+  
+  - first network: initial coarse prediction  
+    - reconstruction loss로 학습된다.  
+  - second network: predict refined results(coarse prediction as inputs)  
+    - reconstruction & GAN loss로 학습된다.  
+
+- 효율성을 위해 thin & deep scheme 으로 디자인되었고 더 적은 파라미더들을 사용한다.  
+
+  
+
+
 
