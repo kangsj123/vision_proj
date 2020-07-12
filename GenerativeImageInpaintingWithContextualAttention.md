@@ -70,20 +70,36 @@ Related Work
 ### 3. Improved Generative Inpainting Network  
 *논문에서 제시한 네트워크*  
 - 기존 state-of-the-art inpainting model을 개선하여 이 논문에서 새로운 네트워크를 구성하였다.  
-- input : 직사각형 hole을 흰 색으로 채운 이미지 256x256, hole을 나타내는 binary mask  
-  학습된 모델은 다양한 사이즈의 이미지와 여러 구멍이 있는 이미지를 input으로 받아들일 수 있다.  
-- output : final completed image (복원한 이미지)  
 - two-stage coarse-to-fine network architecture  
-  : receptive field의 사이즈가 충분히 큰 것이 중요하다.    
+  : receptive field의 사이즈가 충분히 큰 것이 중요하다.  
   
-  - first network: initial coarse prediction  
-    - reconstruction loss로 학습된다.  
-  - second network: predict refined results(coarse prediction as inputs)  
+  - input : 직사각형 hole을 흰 색으로 채운 이미지 256x256, hole을 나타내는 binary mask  
+  학습된 모델은 다양한 사이즈의 이미지와 여러 구멍이 있는 이미지를 input으로 받아들일 수 있다.  
+  - output : final completed image (복원한 이미지)   
+  - first network: initial coarse prediction   
+    - reconstruction loss로 학습된다.   
+  - second network: predict refined results(coarse prediction as inputs)      
     - reconstruction & GAN loss로 학습된다.  
 
 - 효율성을 위해 thin & deep scheme 으로 디자인되었고 더 적은 파라미더들을 사용한다.  
+- detail  
+  - 모든 convolution layers에 mirror padding 적용  
+<img src="./img/mirror_padding.jpg" width="60%" height="60%"></img>  
+  - batch normalization layers 제거 -> color coherence를 악화시킨다.  
+  - ReLU 대신 ELU를 사용    
+  - global과 local feature representations를 분리 -> 붙이는 것보다 분리하는 것이 더 잘 작동.  
 
+- Global and local Wasserstein GANs  
+  - WGAN-GP의 modified된 버전 제안  
+  - second-stage refinement network의 output에 WGAN-GP loss를 적용한다(현재 GAN losses보다 잘 작동한다.)    
+  - WGAN은 Earth-Mover distance 사용  
+  - objective function: Kantorovich-Rubinstein duality를 적용하여 구성된다.  
+  <img src="./img/wgan-gp_objective_functiong.jpg" width="60%" height="60%"></img>  
   
+- Spatially discounted reconstruction loss  
+
+### 4. Image Inpainting with Contextual Attention  
+
 
 
 
