@@ -94,7 +94,7 @@ Related Work
   - second-stage refinement network의 output에 WGAN-GP loss를 적용한다(현재 GAN losses보다 잘 작동한다.)    
   - WGAN은 Earth-Mover distance 사용  
   - objective function: Kantorovich-Rubinstein duality를 적용하여 구성된다.  
-  <img src="./img/wgan-gp_objective_functiong.jpg" width="60%" height="60%"></img>  
+  <img src="./img/wgan-gp_objective_function.jpg" width="60%" height="60%"></img>  
   
 - Spatially discounted reconstruction loss  
 
