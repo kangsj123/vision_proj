@@ -4,6 +4,7 @@ import os
 
 class TestSet:
     def __init__(self, obj):
+        print("generate.yml", obj, "\n")
         self.SAMPLE_SET_DIRECTORY_NAME = obj["sample_set_directory"]
         self.TEST_SET_DIRECTORY_NAME = obj["test_set_directory"]
         self.TEST_SET_RAW_DIRECTORY_NAME = obj["test_set_raw_directory"]
@@ -19,8 +20,8 @@ class TestSet:
 
     def get_sample_files(self):
         if not os.path.isdir(self.SAMPLE_SET_ABSPATH):
-            print("raw data set cannot found")
-            return []
+            print("Sample data set('%s') cannot found. "%self.SAMPLE_SET_ABSPATH)
+            return None
 
         file_list = []
         for file in os.listdir(self.SAMPLE_SET_ABSPATH):
@@ -95,11 +96,13 @@ class TestSet:
         return input_img
 
     def generate_testset(self):
+        sample_files = self.get_sample_files()
+        if sample_files is None:
+            return
+
         mask_info = self.parse_mask_info(self.MASKSIZE_OPTIONS)
 
         self.create_testset_directories(mask_info)
-
-        sample_files = self.get_sample_files()
 
         for sample_file in sample_files:
             case_name = sample_file[0:sample_file.find("_") + 1]

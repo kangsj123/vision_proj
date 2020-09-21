@@ -1,6 +1,6 @@
 # directory name
-sample_set_directory: "samples"
-test_set_directory: "test_data"
+sample_set_directory: "examples/samples"
+test_set_directory: "examples/test"
 test_set_raw_directory: "raw"
 
 # mask size
