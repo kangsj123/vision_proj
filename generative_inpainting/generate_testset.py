@@ -16,17 +16,15 @@ class TestSet:
 
         self.MASKSIZE_OPTIONS = obj["masksize_options"]
 
-        self.SAMPLE_FILE_FORMAT = obj["raw_file_format"]
-
     def get_sample_files(self):
         if not os.path.isdir(self.SAMPLE_SET_ABSPATH):
             print("Sample data set('%s') cannot found. "%self.SAMPLE_SET_ABSPATH)
+            print("You should set 'SAMPLE_DIRECTORY' properly from generate.xml file")
             return None
 
         file_list = []
         for file in os.listdir(self.SAMPLE_SET_ABSPATH):
-            if self.SAMPLE_FILE_FORMAT in file:
-                file_list.append(file)
+            file_list.append(file)
 
         print("sample files : ", file_list)
 
@@ -104,8 +102,8 @@ class TestSet:
 
         self.create_testset_directories(mask_info)
 
-        for sample_file in sample_files:
-            case_name = sample_file[0:sample_file.find("_") + 1]
+        for idx, sample_file in enumerate(sample_files):
+            case_name = "case" + str(idx + 1) + "_"
             raw_img = cv2.imread(self.SAMPLE_SET_ABSPATH + sample_file, cv2.IMREAD_UNCHANGED)
 
             # create raw files in raw directory

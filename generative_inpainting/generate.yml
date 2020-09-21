@@ -1,5 +1,5 @@
 # directory name
-sample_set_directory: "examples/samples"
+sample_set_directory: "examples/test_25"
 test_set_directory: "examples/test"
 test_set_raw_directory: "raw"
 
@@ -9,7 +9,4 @@ masksize_options: [
                     "50 * 50",
                     "100 * 100"
                     ]
-
-# file
-raw_file_format: "_raw." # case1_raw.png
 
