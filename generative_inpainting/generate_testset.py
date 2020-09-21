@@ -70,7 +70,7 @@ class TestSet:
                 print("The format of mask size is wrong : ", mask)
                 continue
             height, width = re.sub(r"\s+", "", mask).split('*')
-            dir_name = height + " * " + width
+            dir_name = height + "*" + width
             ret.append([dir_name, (int(height), int(width))])
 
         return ret
