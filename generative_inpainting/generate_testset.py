@@ -106,6 +106,10 @@ class TestSet:
             case_name = "case" + str(idx + 1) + "_"
             raw_img = cv2.imread(self.SAMPLE_SET_ABSPATH + sample_file, cv2.IMREAD_UNCHANGED)
 
+            if len(raw_img.shape) != 3:
+                print("case ", str(idx + 1), " : the size of sample img shape ('%s') is not 3 "%sample_file)
+                continue
+
             # create raw files in raw directory
             cv2.imwrite(os.path.join(self.TEST_SET_RAW_ABSPATH, case_name + "raw.png"), raw_img)
 

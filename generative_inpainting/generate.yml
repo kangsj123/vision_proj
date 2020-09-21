@@ -1,5 +1,5 @@
 # directory name
-sample_set_directory: "examples/test_25"
+sample_set_directory: "examples/test_256"
 test_set_directory: "examples/test"
 test_set_raw_directory: "raw"
 
