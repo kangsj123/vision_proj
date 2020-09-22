@@ -1,4 +1,5 @@
 import os
+import csv
 import yaml
 import numpy as np
 import PIL.Image as pilimg
@@ -20,14 +21,13 @@ class Evaluation:
         self.MASKSIZE_OPTIONS = obj["masksize_options"]
 
     def calculate_psnr(self, img1, img2, max=255):
-        psnr = tf.image.psnr(img1, img2, max_val=max)
-
+        psnr = tf.image.psnr(tf.expand_dims(img1[:,:,0], 2), tf.expand_dims(img2[:,:,0], 2), max_val=max)
         with tf.Session() as sess:
             value = sess.run(psnr)  
         return value
 
     def calculate_ssim(self, img1, img2, max=255):
-        ssim = tf.image.ssim(img1, img2, max_val=max)
+        ssim = tf.image.ssim(tf.expand_dims(img1[:,:,0], 2), tf.expand_dims(img2[:,:,0], 2), max_val=max)
         with tf.Session() as sess:
             value = sess.run(ssim)   
         return value
@@ -51,6 +51,14 @@ class Evaluation:
         plt.ylabel('SSIM')
         plt.show()
 
+    def save(self, psnr, ssim):
+        with open('result.csv', 'w') as csvfile:
+            resultwriter = csv.writer(csvfile, delimiter=',')
+            resultwriter.writerow(self.MASKSIZE_OPTIONS)
+            resultwriter.writerow(psnr)
+            resultwriter.writerow(ssim)
+
+
     def evaluate(self):
         raw_image_name = 'case%i_raw.png'
         output_image_name = 'case%i_output.png'
@@ -73,7 +81,7 @@ class Evaluation:
 
             psnr_result.append(pnsr_sum/file_sz)
             ssim_result.append(ssim_sum/file_sz)
-
+        self.save(psnr_result, ssim_result)
         self.visualize(psnr_result, ssim_result)
 
 if __name__ == "__main__":
