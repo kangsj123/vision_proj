@@ -20,14 +20,14 @@ class Evaluation:
         self.MASKSIZE_OPTIONS = obj["masksize_options"]
 
     def calculate_psnr(self, img1, img2, max=255):
-        psnr = tf.image.psnr(tf.expand_dims(img1[:,:,0], 2), tf.expand_dims(img2[:,:,0], 2), max_val=max)
+        psnr = tf.image.psnr(img1, img2, max_val=max)
 
         with tf.Session() as sess:
             value = sess.run(psnr)  
         return value
 
     def calculate_ssim(self, img1, img2, max=255):
-        ssim = tf.image.ssim(tf.expand_dims(img1[:,:,0], 2), tf.expand_dims(img2[:,:,0], 2), max_val=max)
+        ssim = tf.image.ssim(img1, img2, max_val=max)
         with tf.Session() as sess:
             value = sess.run(ssim)   
         return value
