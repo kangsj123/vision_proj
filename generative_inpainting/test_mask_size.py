@@ -138,8 +138,7 @@ class TestMaskSize:
     def run(self):
         start = time.time()
 
-        sample_files = self.get_sample_files()[:500]
-        sample_files = sample_files[:10]
+        sample_files = self.get_sample_files()[:500]  
         if sample_files is None:
             return
         
