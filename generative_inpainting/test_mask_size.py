@@ -1,5 +1,7 @@
 import cv2
 import os
+import time
+import csv
 import numpy as np
 import PIL.Image as pilimg
 import matplotlib.image as mpimg
@@ -134,11 +136,15 @@ class TestMaskSize:
             resultwriter.writerow(ssim)
     
     def run(self):
-        sample_files = self.get_sample_files()
+        start = time.time()
+
+        sample_files = self.get_sample_files()[:500]
+        sample_files = sample_files[:10]
         if sample_files is None:
             return
         
         file_sz = len(sample_files)
+        print("the number of images : ", file_sz)
         mask_info = self.parse_mask_info(self.MASKSIZE_OPTIONS)
         self.create_testset_directories()
 
@@ -154,6 +160,7 @@ class TestMaskSize:
             pnsr_sum = 0.0
             ssim_sum = 0.0
             for idx, sample_file in enumerate(sample_files):
+                print(idx, "th file")
                 # read raw file
                 raw_file_path = self.SAMPLE_SET_ABSPATH + sample_file
                 raw_img = cv2.imread(raw_file_path, cv2.IMREAD_UNCHANGED)
@@ -200,6 +207,7 @@ class TestMaskSize:
         self.save(psnr_result, ssim_result)
         self.visualize(psnr_result, ssim_result)
 
+        print("Total time taken:", time.time() - start)
                 
 if __name__ == "__main__":
     import yaml
