@@ -139,11 +139,8 @@ class TestMaskSize:
     def run(self):
         start = time.time()
 
-<<<<<<< HEAD:test_mask_size.py
-        sample_files = self.get_sample_files()[:500]
-=======
         sample_files = self.get_sample_files()[:500]  
->>>>>>> 5be9e04fc6443a7be4000d979fa1243176224731:generative_inpainting/test_mask_size.py
+
         if sample_files is None:
             return
         
