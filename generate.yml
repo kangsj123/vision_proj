@@ -1,0 +1,12 @@
+# directory name
+sample_set_directory: "examples/test_large"
+test_set_directory: "examples/test_places2"
+
+# mask size
+masksize_options: [
+                    "10*10", "20*20", "30*30"
+                    ]
+
+# model path
+model_directory: "model_logs/release_places2_256"
+

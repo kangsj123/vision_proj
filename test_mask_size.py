@@ -128,7 +128,8 @@ class TestMaskSize:
         plt.ylabel('SSIM')
         plt.show()
 
-    def save(self, psnr, ssim):
+    def save(self, cnt, psnr, ssim):
+        # name = 'result' + str(cnt) + '.csv'
         with open('result.csv', 'w') as csvfile:
             resultwriter = csv.writer(csvfile, delimiter=',')
             resultwriter.writerow(self.MASKSIZE_OPTIONS)
@@ -139,7 +140,6 @@ class TestMaskSize:
         start = time.time()
 
         sample_files = self.get_sample_files()[:500]
-        sample_files = sample_files[:10]
         if sample_files is None:
             return
         
@@ -155,12 +155,14 @@ class TestMaskSize:
 
         psnr_result = []
         ssim_result = []
-
         for height, width in mask_info:
             pnsr_sum = 0.0
             ssim_sum = 0.0
+            cnt = 0
             for idx, sample_file in enumerate(sample_files):
-                print(idx, "th file")
+                if cnt==500:
+                    break
+                print("mask size: "+ str(height) + "," + str(width) + " " + str(idx) + "th file")
                 # read raw file
                 raw_file_path = self.SAMPLE_SET_ABSPATH + sample_file
                 raw_img = cv2.imread(raw_file_path, cv2.IMREAD_UNCHANGED)
@@ -190,6 +192,7 @@ class TestMaskSize:
                     image2 = tf.image.convert_image_dtype(img2, tf.float32)
                     pnsr_sum += self.calculate_psnr(image1, image2)
                     ssim_sum += self.calculate_ssim(image1, image2)
+                    cnt += 1
                 else:
                     print("img1 shape : ", img1.shape)
                     print("img2 shape : ", img2.shape)
@@ -200,11 +203,10 @@ class TestMaskSize:
                 self.delete_file(output_file_path)
                 self.delete_file(mask_file_path)
 
-            psnr_result.append(pnsr_sum/file_sz)
-            ssim_result.append(ssim_sum/file_sz)
-        
+            psnr_result.append(pnsr_sum/cnt)
+            ssim_result.append(ssim_sum/cnt)
+            self.save(cnt, psnr_result, ssim_result)
         # save result
-        self.save(psnr_result, ssim_result)
         self.visualize(psnr_result, ssim_result)
 
         print("Total time taken:", time.time() - start)
