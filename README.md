@@ -33,12 +33,12 @@
   `사용한 모델의 논문` | Generative Image Inpainting with Contextual Attention [링크](https://arxiv.org/pdf/1801.07892.pdf)    
   `metrics`  
   - psnr  
-    ![metric1](./img/metric1.png)  
+    <img src="./img/metric1.png" width="300">  
     원본 이미지와 데이터 손실이 있는 이미지 간의 화질 차이를 측정하기 위함.  
     MSE는 원본 이미지와 데이터의 손실이 있는 이미지간의 픽셀 대 픽셀 차이값의 제곱합을 평균낸 값  
 
   - ssim   
-    ![metric2](./img/metric2.png)  
+    <img src="./img/metric2.png" width="300">  
     수치적인 에러가 아닌 인간의 시각적 화질 차이 및 유사도를 평가하기 위해 고안된 방법  
     두 이미지의 휘도, 대비, 및 구조를 비교  
 
