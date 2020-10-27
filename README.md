@@ -26,7 +26,7 @@
 3)`Free-Form Image Inpainting with Gated Convolution 22 Oct 2019` | 
 [논문](https://arxiv.org/pdf/1806.03589.pdf) | 
 [코드](https://github.com/JiahuiYu/generative_inpainting) | 
-[리뷰]() |   
+[리뷰](https://github.com/stellakang/vision_proj/blob/master/FreeFormImageInpaintingWithGatedConvolution.md) |   
 
   2. Small tasks   
   `목표` | 어떤 요소들이 image inpainting의 성능에 영향을 끼칠 것인지 생각해보기 & 결과 분석하는 자동화된 코드 작성 및 결과 측정      
