@@ -20,7 +20,8 @@ designed for a single rectangular mask are not applicable.
 
      Recently partial convolution is proposed which adapts a masking and re-normalization step to make the convolution dependent only on valid pixels as like below.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e6b69b8-0fec-407e-8c15-71ac978e1ebe/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e6b69b8-0fec-407e-8c15-71ac978e1ebe/Untitled.png)
+    
+     <img src="./img/free-form1.png" width="60%" height="60%"></img>  
 
     in which M is the corresponding binary mask, 1 represents pixel in the location(y, x) is valid, 0 represents the pixel is invalid, circle denotes element-wise multiplication.
 
@@ -46,16 +47,16 @@ It evalutates the proposed free-form image inpainting system on Places2 and Cele
 
 1. Quantitative Results
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56c45df0-aa9c-4c71-aa58-56c4654844df/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56c45df0-aa9c-4c71-aa58-56c4654844df/Untitled.png)
+     <img src="./img/free-form2.png" width="60%" height="60%"></img>  
 
 2. Qualitative Comparisons
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/45c78c46-703c-4c5e-8621-60a9270989f6/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/45c78c46-703c-4c5e-8621-60a9270989f6/Untitled.png)
+     <img src="./img/free-form3.png" width="60%" height="60%"></img>  
 
 3. Object Removal and Creative Editing
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/29bf8b64-d809-471b-9f98-358de1915e13/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/29bf8b64-d809-471b-9f98-358de1915e13/Untitled.png)
-
+     <img src="./img/free-form4.png" width="60%" height="60%"></img>  
+     
 ## Conclusions
 
 1. A novel free-form image inpainting system : based on an end-to-end generative network with gated convolution.
