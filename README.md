@@ -42,7 +42,7 @@
     수치적인 에러가 아닌 인간의 시각적 화질 차이 및 유사도를 평가하기 위해 고안된 방법  
     두 이미지의 휘도, 대비, 및 구조를 비교  
 
-     2-1. mask size에 따른 성능 평가 | [작성 코드](https://github.com/stellakang/vision_proj/blob/master/evaluation/mask-size)    
+  - mask size에 따른 성능 평가 | [작성 코드](https://github.com/stellakang/vision_proj/blob/master/evaluation/mask-size)    
      
      - mask의 size에 따라 이미지 복원 정도가 달라질 것.   
      - 사용한 데이터셋 : [places2](http://places2.csail.mit.edu/download.html) -> 링크의 places365-standard의 high resolution images의 test images      
@@ -58,25 +58,13 @@
        3) 1)에서 다운받은 레포 내에 `generate.yml`, `test_mask_size.py`를 위치시킨다.  
        4) `python test_mask_size.py`를 실행한다.  
 
-     2-2. mask의 위치에 따른 성능 평가 | [작성 코드](https://github.com/stellakang/vision_proj/blob/master/evaluation/mask-position)   
-     
-     - mask가 픽셀값의 변화가 큰 조각상 위에 위치하는지, 하늘과 같이 픽셀값의 변화가 작은 곳에 위치하느냐에 따라 이미지 복원 정도가 달라질 것.  
-     - 사용한 데이터셋 : [places2](http://places2.csail.mit.edu/download.html)   
-     - places2 dataset으로 pretrained된 모델을 이용  
-     - segmentation map을 이용하여 물체를 구분하여 mask의 위치를 다르게 함.   
-     - 방법  
-       1) [논문 레포](https://github.com/JiahuiYu/generative_inpainting)를 다운받고(clone) `Run`에 나와있는 환경 설정 및 pretrained model 다운로드   
-  
-  3. Future tasks  
-  
-
 ### Result  
 
 1. 요약    
 
 2. Small tasks  
 
-  2-1. mask size에 따른 성능 평가  
+- mask size에 따른 성능 평가  
   
   1)PSNR  
   ![psnr](./img/psnr_graph.png)  
@@ -91,8 +79,5 @@
 |:---:|:---:| :---: | :---: |:---:|:---:|:---:|  
 | SSIM | 0.999999951504037 | 0.9999994279626380 | 0.999997875733462 | 0.999994670819185	| 0.999989010766895 | 0.999979951577578 |   
   
-  2-2. mask 위치에 따른 성능 평가  
-
-3. Future tasks   
 
 
