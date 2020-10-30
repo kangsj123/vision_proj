@@ -100,6 +100,13 @@ Related Work
 
 ### 4. Image Inpainting with Contextual Attention  
 
+### 1) Contextual Attention  
+ The contextual attention layer learns where to borrow or
+copy feature information from known background patches
+to generate missing patches.  
 
+### 2) Unified Inpainting Network  
+Output features from two encoders are aggregated and fed into a 5 single decoder to obtain the final output.  
 
+For training, given a raw image x, sample a binary image mask m at a random location.  
 
