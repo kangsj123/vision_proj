@@ -14,7 +14,7 @@
 
 ### 2.1. Image Inpainting
 
-- **Image Inpainting**이란 이미지에서 노이즈나 지워진 부분을 복원하는 것으로 이를 수행했던 초기 방법과 최근 방법은 다르다.
+- **Image Inpainting**이란 이미지에서 노이즈나 지워진 부분을 복원하는 것으로 이를 수행했던 초기 방법과 달리 최근에는 딥러닝을 적용한 방식이 많다.
     - 초기 방법 : 주변 픽셀 값을 이용하여 비어있는 값을 예측하여 채우는 방식([참고](https://docs.opencv.org/master/df/d3d/tutorial_py_inpainting.html)) 사용
     - 최근 방법 : 딥러닝을 이용한 방식으로 CNN과 같은 특정 네트워크를 이용하여 학습시킨 모델 사용
 
